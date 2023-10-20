@@ -1,0 +1,76 @@
+<div class="modal-header">
+  <h4 class="modal-title">View cv "{{ postToUpdate.name }}"</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <b>Personal Information</b>
+  <div>
+    <label>Name: {{ postToUpdate.name }}</label>
+  </div>
+  <div>
+    <label>Surname: {{ postToUpdate.surname }}</label>
+  </div>
+  <div>
+    <label>Email: {{ postToUpdate.eMail }}</label>
+  </div>
+  <div>
+    <label>Phone: {{ postToUpdate.phone }}</label>
+  </div>
+  <b>Educational institutions</b>
+  <div>
+    <label>Name: {{ postToUpdate.eduName }}</label>
+  </div>
+  <div>
+    <label>Faculty: {{ postToUpdate.eduFaculty }}</label>
+  </div>
+  <div>
+    <label>Level: {{ postToUpdate.eduLevel }}</label>
+  </div>
+  <div>
+    <label>Status: {{ postToUpdate.eduStatus }}</label>
+  </div>
+
+  <b>Jobs</b>
+  <div>
+    <label>Name: {{ postToUpdate.workName }}</label>
+  </div>
+  <div>
+    <label>Positions: {{ postToUpdate.workPosition }}</label>
+  </div>
+  <div>
+    <label>Load: {{ postToUpdate.workLoad }}</label>
+  </div>
+  <div>
+    <label>Time: {{ postToUpdate.workTime }}</label>
+  </div>
+  <b>Skils</b>
+  <div>
+    <label>Description: {{ postToUpdate.skilDesc }}</label>
+  </div>
+  <div>
+    <label>Type: {{ postToUpdate.skilType }}</label>
+  </div>
+  <b>Address</b>
+  <div>
+    <label>Achievement: {{ postToUpdate.skilAchievement }}</label>
+  </div>
+  <div>
+    <label>Country: {{ postToUpdate.addrCountry }}</label>
+  </div>
+  <div>
+    <label>Postal index: {{ postToUpdate.addrIndex }}</label>
+  </div>
+  <div>
+    <label>City: {{ postToUpdate.addrCity }}</label>
+  </div>
+  <div>
+    <label>Street: {{ postToUpdate.addrStreet }}</label>
+  </div>
+  <div>
+    <label>Nr.: {{ postToUpdate.addrNr }}</label>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-lg btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

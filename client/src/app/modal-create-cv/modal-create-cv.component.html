@@ -1,0 +1,119 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create New CV</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="modal-body">
+    <div class="container">     
+        <b>Personal information</b>
+        <div class="form-group col-md-4">
+          <label for="titleInput" class="pd">Name:</label>
+          <input class="form-control" id="titleInput" formControlName="name">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="surnameInput" class="pd">Surname:</label>
+          <input class="form-control" id="surnameInput" formControlName="surname">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="eMail" class="pd">EMail:</label>
+          <input class="form-control" id="eMail" formControlName="eMail">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="phone" class="pd">Phone:</label>
+          <input class="form-control" id="phone" formControlName="phone">
+        </div>
+     
+      <b>Educational institutions</b>
+      <div class="form-group col-md-4">
+        <label for="eduName" class="pd"> Name:</label>
+        <input class="form-control" id="eduName" formControlName="eduName">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="eduFaculty" class="pd"> Faculty:</label>
+        <input class="form-control" id="eduFaculty" formControlName="eduFaculty">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="eduLevel" class="pd"> Level:</label>
+        <input class="form-control" id="eduLevel" formControlName="eduLevel">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="eduStatus" class="pd"> Status:</label>
+        <input class="form-control" id="eduStatus" formControlName="eduStatus">
+      </div> 
+      <b>Jobs</b>
+      <div class="form-group col-md-4">
+        <label for="workName" class="pd"> Name:</label>
+        <input class="form-control" id="workName" formControlName="workName">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="workPosition" class="pd"> Position:</label>
+        <input class="form-control" id="workPosition" formControlName="workPosition">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="workLoad" class="pd"> Load:</label>
+        <input class="form-control" id="workLoad" formControlName="workLoad">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="workTime" class="pd"> Time:</label>
+        <input class="form-control" id="workTime" formControlName="workTime">
+      </div>
+      <b>Skils</b>
+      <div class="form-group col-md-4">
+        <label for="skilDesc" class="pd"> Description:</label>
+        <input class="form-control" id="skilDesc" formControlName="skilDesc">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="skilType" class="pd"> Type:</label>
+        <input class="form-control" id="skilType" formControlName="skilType">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="skilAchievement" class="pd"> Achievement:</label>
+        <input class="form-control" id="skilAchievement" formControlName="skilAchievement">
+      </div>
+      <b>Address</b>
+      <div class="form-group col-md-4">
+        <label for="addrCountry" class="pd"> Country:</label>
+        <input class="form-control" id="addrCountry" formControlName="addrCountry">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="addrIndex" class="pd"> Postal index:</label>
+        <input class="form-control" id="addrIndex" formControlName="addrIndex">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="addrCity" class="pd"> City:</label>
+        <input class="form-control" id="addrCity" formControlName="addrCity">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="addrNr" class="pd"> Nr:</label>
+        <input class="form-control" id="addrNr" formControlName="addrNr">
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <p class="text-success" *ngIf="createSuccessful">Post created!</p>
+    <p class="text-danger" *ngIf="createFailed">Failed to create the post. Check the console for details.</p>
+
+    <button class="btn btn-lg btn-dark" type="submit" *ngIf="createSuccessful === false">Create</button>
+    <button type="button" class="btn btn-lg btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+
+</form>

@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+
+  client:
+    build: ./client
+    ports:
+      - "8080:90"
+
+
+  cvapi:
+    image: ${DOCKER_REGISTRY-}cvapi
+    build:
+      context: .  
+      dockerfile: cvApi/Dockerfile
+    environment:
+          - ASPNETCORE_URLS=https://+:443;http://+:80
+    links:
+          - mongo
+    ports:
+       - "8001:80"
+       - "8000:443"
