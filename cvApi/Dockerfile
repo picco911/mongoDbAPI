@@ -7,6 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
+RUN dotnet dev-certs https --clean
+RUN dotnet dev-certs https -t
 COPY ["cvApi/cvApi.csproj", "cvApi/"]
 RUN dotnet restore "cvApi/cvApi.csproj"
 COPY . .
