@@ -1,7 +1,7 @@
 import { isDevMode } from '@angular/core';
 
-const SERVER_BASE_URL_DEVELOPMENT = 'https://localhost:8000/api';
-const SERVER_BASE_URL_PRODUCTION = 'https://localhost:8000/api';
+const SERVER_BASE_URL_DEVELOPMENT = 'http://localhost:8001/api';
+const SERVER_BASE_URL_PRODUCTION = 'http://localhost:8001/api';
 
 const BASE_ENDPOINTS = {
   GET_ALL_POSTS: 'CV',

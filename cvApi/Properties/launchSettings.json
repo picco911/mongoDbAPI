@@ -44,10 +44,10 @@
       "environmentVariables": {
         "ASPNETCORE_URLS": "https://+:443;http://+:80"
       },
-      "useSSL": true,
+      "useSSL": false,
       "publishAllPorts": true,
-      "httpPort": 5000,
-      "sslPort": 5001
+      "httpPort": 8000,
+      "sslPort": 8001
     }
   }
 }

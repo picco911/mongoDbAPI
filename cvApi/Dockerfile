@@ -4,11 +4,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-RUN dotnet dev-certs https --clean
-RUN dotnet dev-certs https -t
 COPY ["cvApi/cvApi.csproj", "cvApi/"]
 RUN dotnet restore "cvApi/cvApi.csproj"
 COPY . .
@@ -21,4 +18,4 @@ RUN dotnet publish "cvApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "cvApi.dll"]
+ENTRYPOINT ["dotnet", "cvApi.dll" ]
